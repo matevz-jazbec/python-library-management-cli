@@ -1,0 +1,14 @@
+{
+  "books": [
+    "Introduction to Algorithms",
+    "Clean Code",
+    "Artificial Intelligence: A Modern Approach",
+    "Database System Concepts",
+    "Computer Networking: A Top-Down Approach"
+  ],
+  "loans": {
+    "Introduction to Algorithms": "Ava Mitchell",
+    "Clean Code": "Ethan Rivera",
+    "Database System Concepts": "Sophia Lewis"
+  }
+}

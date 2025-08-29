@@ -1,0 +1,14 @@
+{
+  "books": [
+    "The Silent Patient",
+    "Educated",
+    "The Midnight Library",
+    "Sapiens",
+    "Atomic Habits"
+  ],
+  "loans": {
+    "The Silent Patient": "Emma Clark",
+    "Sapiens": "Noah Bennett",
+    "Atomic Habits": "Liam Turner"
+  }
+}

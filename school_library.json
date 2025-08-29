@@ -1,0 +1,14 @@
+{
+  "books": [
+    "Charlotte's Web",
+    "Harry Potter and the Sorcerer's Stone",
+    "Matilda",
+    "The Hobbit",
+    "The Giver"
+  ],
+  "loans": {
+    "Harry Potter and the Sorcerer's Stone": "Oliver Smith",
+    "The Hobbit": "Mia Johnson",
+    "The Giver": "James Wilson"
+  }
+}
