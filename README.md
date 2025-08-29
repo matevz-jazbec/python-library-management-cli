@@ -1,6 +1,6 @@
 # Library Management System (Study Example)
 
-This is a simple Python study project that demonstrates basic programming concepts such as classes, methods, lists, dictionaries, user input, and working with JSON files.
+This is a simple Python study project that demonstrates basic programming concepts such as classes, methods, lists, dictionaries, user input, and working with JSON files. It is implemented as a command-line interface (CLI) application.
 
 The program simulates a small Library Management System, where a user can:
 - Display all available books
