@@ -35,7 +35,7 @@ python3 library_management_study.py
 ```
 
 ## Notes
-- The program uses relative paths for JSON files. Make sure to run the script from the same directory where the `.py` file and the `.json` files are located, otherwise the data might not load correctly.
+- This project uses relative paths for JSON files. Run the script from the same folder where the `.py` file and the `.json` files are located. If you move the project to another folder, move the `.py` and `.json` files together.
 - JSON files are automatically updated when books are added, deleted, loaned, or returned.
 - If a JSON file does not exist, it will be created automatically.
 - This is a study project intended for learning and sharing with students.
