@@ -41,6 +41,10 @@ class Library:
         except FileNotFoundError:
             self.books_list = []
             self.loans_dict = {}
+        except json.JSONDecodeError:
+            print(f"Invalid JSON format in '{self.library_file}'. Starting with an empty library.")
+            self.books_list = []
+            self.loans_dict = {}
 
     def save_library(self):
         """Save current state (books + loans) into JSON file"""
