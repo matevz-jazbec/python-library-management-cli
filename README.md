@@ -12,7 +12,7 @@ The program simulates a small Library Management System, where a user can:
 - Switch between different libraries
 
 ## Project Structure
-- `library_management_study.py` → main library code
+- `library_management_cli.py` → main library code
 - `city_library.json` → example JSON data for City Library
 - `university_library.json` → example JSON data for University Library
 - `school_library.json` → example JSON data for School Library
@@ -26,12 +26,12 @@ Run the main program:
 
 ### Windows
 ```bash
-python library_management_study.py
+python library_management_cli.py
 ```
 
 ### macOS / Linux
 ```bash
-python3 library_management_study.py
+python3 library_management_cli.py
 ```
 
 ## Notes
