@@ -150,14 +150,10 @@ class Library:
 
 def select_library():
     """Allow user to select which library JSON file to use"""
-    city_library = Library("city_library.json", "City Library")
-    university_library = Library("university_library.json", "University Library")
-    school_library = Library("school_library.json", "School Library")
-
     libraries = {
-        1: city_library,
-        2: university_library,
-        3: school_library,
+        1: ("city_library.json", "City Library"),
+        2: ("university_library.json", "University Library"),
+        3: ("school_library.json", "School Library"),
     }
 
     print("=== LIBRARY MANAGEMENT SYSTEM ===")
@@ -170,7 +166,8 @@ def select_library():
         try:
             choice = int(input("\nEnter library number (1-3): "))
             if choice in libraries:
-                return libraries[choice]
+                library_file, library_name = libraries[choice]
+                return Library(library_file, library_name)
             else:
                 print("Please enter a valid number (1-3).")
         except ValueError:
