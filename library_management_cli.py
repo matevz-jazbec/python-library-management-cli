@@ -102,7 +102,7 @@ class Library:
 
         self.books_list.remove(book_to_delete)
         self.save_library()
-        print(f"Book '{book}' has been deleted successfully.")
+        print(f"Book '{book_to_delete}' has been deleted successfully.")
 
     def lend_book(self, book):
         """Lend a book to a user"""
@@ -130,7 +130,7 @@ class Library:
 
         self.loans_dict[book_to_lend] = user
         self.save_library()
-        print(f"Book '{book}' has been loaned to {user}.")
+        print(f"Book '{book_to_lend}' has been loaned to {user}.")
 
     def return_book(self, book):
         """Return a book (remove it from the loan records)"""
@@ -143,7 +143,7 @@ class Library:
         if book_to_return is not None:
             self.loans_dict.pop(book_to_return)
             self.save_library()
-            print(f"Book '{book}' has been returned.")
+            print(f"Book '{book_to_return}' has been returned.")
         else:
             print("This book is not in the loan records.")
 
