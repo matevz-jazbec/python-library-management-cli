@@ -7,6 +7,7 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
 ENV/
 *.egg-info/
 dist/
@@ -27,3 +28,4 @@ htmlcov/
 
 # Local config files (optional, if you use them)
 *.env
+*.log
