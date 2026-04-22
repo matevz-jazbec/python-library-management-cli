@@ -110,19 +110,16 @@ class Library:
         if not book:
             return
 
-        # check if book exists in the library
         book_to_lend = self.find_book_in_list(book, self.books_list)
 
         if book_to_lend is None:
             print("Sorry! We don't have this book in our library.")
             return
 
-        # check if book is already on loan
         if book_to_lend in self.loans_dict:
             print(f"Book is currently being used by {self.loans_dict[book_to_lend]}")
             return
 
-        # ask for borrower's name
         user = input("Enter the borrower's name: ").strip()
         if not user:
             print("Borrower's name cannot be empty.")
@@ -230,12 +227,10 @@ def main(library):
 
 
 if __name__ == "__main__":
-    """Entry point: allow user to select a library and start the menu"""
+    # Entry point: allow user to select a library and start the menu
     while True:
         selected_library = select_library()
         result = main(selected_library)
 
         if result == "exit":
             break
-        elif result == "change_library":
-            continue
