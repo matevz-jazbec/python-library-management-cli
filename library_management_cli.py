@@ -2,21 +2,23 @@ import json
 
 
 class Library:
+    """Represent a library with books and loan records stored in JSON."""
+
     def __init__(self, library_file, name):
-        """Initialize a Library instance with JSON file (to save data) and a name"""
+        """Initialize the library and load saved data."""
         self.name = name
         self.library_file = library_file
-        self.books_list = []  # stores all available books
-        self.loans_dict = {}  # stores which user has borrowed each book
+        self.books_list = []
+        self.loans_dict = {}
 
-        self.load_library()  # load existing data from JSON file
+        self.load_library()
 
     def normalize_book(self, book):
-        """Return normalized version of book title (trim + lowercase)"""
+        """Return a normalized book title for comparisons."""
         return book.strip().lower()
 
     def validate_book_title(self, book):
-        """Validate that title is not empty; return stripped version"""
+        """Return a stripped book title, or None if it is empty."""
         book = book.strip()
         if not book:
             print("Book title cannot be empty.")
@@ -24,7 +26,7 @@ class Library:
         return book
 
     def find_book_in_list(self, book_title, book_list):
-        """Find a book in a list by comparing normalized titles"""
+        """Find a book in a list by comparing normalized titles."""
         book_normalized = self.normalize_book(book_title)
         for existing_book in book_list:
             if self.normalize_book(existing_book) == book_normalized:
@@ -32,7 +34,7 @@ class Library:
         return None
 
     def load_library(self):
-        """Load books and loans from JSON file (or start empty if file not found)"""
+        """Load books and loans from the JSON file."""
         try:
             with open(self.library_file, "r", encoding="utf-8") as f:
                 data = json.load(f)
@@ -47,13 +49,13 @@ class Library:
             self.loans_dict = {}
 
     def save_library(self):
-        """Save current state (books + loans) into JSON file"""
+        """Save books and loan records to the JSON file."""
         data = {"books": self.books_list, "loans": self.loans_dict}
         with open(self.library_file, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
 
     def display_books(self):
-        """Print all books in the library"""
+        """Print all books in the library."""
         if not self.books_list:
             print("No books available in the library.")
             return
@@ -62,7 +64,7 @@ class Library:
             print(f"{i}. {book}")
 
     def display_loans(self):
-        """Print all currently loaned books with borrower names"""
+        """Print all currently loaned books with borrower names."""
         if not self.loans_dict:
             print("No books are currently on loan.")
             return
@@ -71,7 +73,7 @@ class Library:
             print(f"{i}. {book} is borrowed by {user}")
 
     def add_book(self, book):
-        """Add a new book to the library if it does not already exist"""
+        """Add a new book to the library if it does not already exist."""
         book = self.validate_book_title(book)
         if not book:
             return
@@ -85,7 +87,7 @@ class Library:
         print(f"Book '{book}' has been added successfully.")
 
     def delete_book(self, book):
-        """Delete a book if it exists and is not currently loaned out"""
+        """Delete a book if it exists and is not currently loaned out."""
         book = self.validate_book_title(book)
         if not book:
             return
@@ -105,7 +107,7 @@ class Library:
         print(f"Book '{book_to_delete}' has been deleted successfully.")
 
     def lend_book(self, book):
-        """Lend a book to a user"""
+        """Lend a book to a user."""
         book = self.validate_book_title(book)
         if not book:
             return
@@ -130,7 +132,7 @@ class Library:
         print(f"Book '{book_to_lend}' has been loaned to {user}.")
 
     def return_book(self, book):
-        """Return a book (remove it from the loan records)"""
+        """Return a book by removing it from the loan records."""
         book = self.validate_book_title(book)
         if not book:
             return
@@ -146,7 +148,7 @@ class Library:
 
 
 def select_library():
-    """Allow user to select which library JSON file to use"""
+    """Allow the user to select which library JSON file to use."""
     libraries = {
         1: ("city_library.json", "City Library"),
         2: ("university_library.json", "University Library"),
@@ -172,7 +174,7 @@ def select_library():
 
 
 def main(library):
-    """Main menu loop for interacting with the library"""
+    """Run the main menu loop for the selected library."""
     print(f"\n=== WELCOME TO {library.name.upper()} ===")
 
     while True:
@@ -227,7 +229,7 @@ def main(library):
 
 
 if __name__ == "__main__":
-    # Entry point: allow user to select a library and start the menu
+    # Entry point for running the CLI application.
     while True:
         selected_library = select_library()
         result = main(selected_library)
