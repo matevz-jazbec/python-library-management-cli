@@ -1,41 +1,49 @@
-# Library Management System (Study Example)
+# Library Management CLI
 
-This is a simple Python study project that demonstrates basic programming concepts such as classes, methods, lists, dictionaries, user input, and working with JSON files. This project is a command-line interface (CLI) application.
+A simple Python command-line application for managing small library collections.
 
-The program simulates a small Library Management System, where a user can:
-- Display all available books
-- Display all loaned books
+This project was created as a study project to practice core Python concepts such as classes, methods, lists, dictionaries, user input, file handling, and working with JSON data.
+
+## Features
+
+- Display all books in a library
+- Display currently loaned books
 - Lend a book to a user
-- Return a book
+- Return a borrowed book
 - Add a new book
 - Delete a book
-- Switch between different libraries
+- Switch between multiple libraries
 
 ## Project Structure
-- `library_management_cli.py` → main library code
-- `city_library.json` → example JSON data for City Library
-- `university_library.json` → example JSON data for University Library
-- `school_library.json` → example JSON data for School Library
+
+- `library_management_cli.py` - main application file
+- `city_library.json` - sample data for City Library
+- `university_library.json` - sample data for University Library
+- `school_library.json` - sample data for School Library
 
 ## Requirements
-- Python 3 or higher  
-(No external packages are required – only standard library modules are used.)
+
+- Python 3
+
+No external packages are required. The project only uses Python's standard library.
 
 ## How to Run
-Run the main program:
 
-### Windows
+Windows:
+
 ```bash
 python library_management_cli.py
 ```
 
-### macOS / Linux
+macOS / Linux:
+
 ```bash
 python3 library_management_cli.py
 ```
 
 ## Notes
-- This project uses relative paths for JSON files. Run the script from the same folder where the `.py` file and the `.json` files are located. If you move the project to another folder, move the `.py` and `.json` files together.
-- JSON files are automatically updated when books are added, deleted, loaned, or returned.
-- If a JSON file does not exist, it will be created automatically.
-- This is a study project intended for learning and sharing with students.
+
+- Run the program from the project folder so it can access the JSON files.
+- JSON files are updated when books are added, deleted, loaned, or returned.
+- If a JSON file is missing, the program starts with an empty library and creates the file when data is saved.
+- This project is intentionally simple and focuses on basic Python and CLI logic.
